@@ -22,11 +22,11 @@ inputs:
   commit-user-name:
     description: 'Git username of the commit.'
     required: false
-    default: 'eavajlo'
+    default: ''
   commit-user-email:
     description: 'Git user email of the commit.'
     required: false
-    default: 'v-cd-0910-rcddevelopment@volkswagen.de'
+    default: ''
 
 runs:
   using: 'composite'
