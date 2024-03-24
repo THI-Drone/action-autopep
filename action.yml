@@ -22,11 +22,11 @@ inputs:
   commit-user-name:
     description: 'Git username of the commit.'
     required: false
-    default: 'MatixLoc'
+    default: ''
   commit-user-email:
     description: 'Git user email of the commit.'
     required: false
-    default: 'nip4721@thi.de'
+    default: ''
 
 runs:
   using: 'composite'
