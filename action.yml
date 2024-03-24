@@ -1,0 +1,38 @@
+name: 'Autopep8'
+
+description: 'Autopep8 the repository recursively to check or directly reformat your Python project.'
+
+inputs:
+  apply-changes:
+    description: 'Specify whether to apply changes if standards not met or quit the workflow.'
+    required: false
+    default: false
+  use-own-pep8-config:
+    description: 'Specify whether to use own pep8 file in root directory of branch or use the default config of the action.'
+    required: false
+    default: false
+  commit:
+    description: 'Directly commit applied changes.'
+    required: false
+    default: false
+  commit-msg:
+    description: 'Commit message in case changes are applied.'
+    required: false
+    default: 'autopep'
+  commit-user-name:
+    description: 'Git username of the commit.'
+    required: false
+    default: 'eavajlo'
+  commit-user-email:
+    description: 'Git user email of the commit.'
+    required: false
+    default: 'v-cd-0910-rcddevelopment@volkswagen.de'
+
+runs:
+  using: 'composite'
+  steps:
+  - shell: bash
+    run: |
+      echo "${{ github.action_path }}" >> $GITHUB_PATH
+  - shell: bash
+    run: format.sh ${{ inputs.apply-changes }} ${{ inputs.use-own-pep8-config }} ${{ inputs.commit }} ${{ inputs.commit-msg }} ${{ inputs.commit-user-name }} ${{ inputs.commit-user-email }}
