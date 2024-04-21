@@ -67,7 +67,7 @@ if [[ "$apply_changes" == "true" ]]; then
     else
         autopep8 \
             --ignore E402 \
-            --max-line-length 120 \
+            --max-line-length 80 \
             --in-place \
             --recursive \
             .
